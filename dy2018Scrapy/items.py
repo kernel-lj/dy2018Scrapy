@@ -10,8 +10,5 @@ import scrapy
 
 class Dy2018ScrapyItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    # down_link = scrapy.Field()
-    # name = scrapy.Field()
-    # down_link = scrapy.Field()
-    pass
+    down_link = scrapy.Field()
+

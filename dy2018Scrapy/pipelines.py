@@ -7,18 +7,14 @@
 
 import json
 class Dy2018ScrapyPipeline(object):
-    pass
-    # def __init__(self):
-    #     self.f = open("dy.json", "a+")
-    #
-    # # 有中文要加 ensure_ascii=False
-    # def process_item(self, item, spider):
-    #
-    #     print "8" * 100
-    #     print item
-    #     self.f.write( item['down_link'])
-    #     return item
-    #
-    # def close_spider(self, spider):
-    #     self.f.close()
+    def __init__(self):
+        self.f = open("dy.text", "a+")
+
+    # 有中文要加 ensure_ascii=False
+    def process_item(self, item, spider):
+        self.f.write(item['down_link'].encode('utf8') + '\n')
+        return item
+
+    def close_spider(self, spider):
+        self.f.close()
 

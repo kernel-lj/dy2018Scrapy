@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+from dy2018Scrapy.items import Dy2018ScrapyItem
 
 class DianyingSpider(scrapy.Spider):
-    def __init__(self):
-        self.f = open("dy.text", "a+")
+    # def __init__(self):
+    #     self.f = open("dy.text", "a+")
 
     name = "dianying"
     allowed_domains = ["dy2018.com"]
@@ -20,7 +20,9 @@ class DianyingSpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse1)
 
     def parse1(self, response):
+        item = Dy2018ScrapyItem()
         node_list = response.xpath("//*[@id='Zoom']/table[1]//tr[1]/td/a/text()").extract()
-        self.f.write(node_list[0].encode('utf8') + '\n')
+        item['down_link'] = node_list[0]
+        yield item
 
 
