@@ -8,7 +8,7 @@
 import json
 class Dy2018ScrapyPipeline(object):
     def __init__(self):
-        self.f = open("dy.text", "a+")
+        self.f = open("dy.text", "w")
 
     # 有中文要加 ensure_ascii=False
     def process_item(self, item, spider):
