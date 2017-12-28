@@ -1,0 +1,4 @@
+抓取电影天堂 www.dy2018.com 最新的25部电影
+1.cd /dy2018Scrapy2/dy2018Scrapy/spiders
+2.执行命令 scrapy crawl dianying
+3.执行完后会在/dy2018Scrapy2/dy2018Scrapy/spiders目录下有个dy.text包含了最新的25部电影的下载地址
